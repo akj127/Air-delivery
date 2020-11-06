@@ -1,0 +1,14 @@
+<launch>
+	
+	<arg name="fcu_url" default="/dev/ttyACM0:115200?ids=255,240"/>
+
+	<!-- /dev/ttyACM0:115200?ids=255,240 -->
+
+	<arg name="rate --all" default="10" />
+	<arg name="perspective_file" default="/home/mandeep/Default.perspective"/>
+
+	<include file="$(find mavros)/launch/apm2.launch">
+		<arg name="fcu_url" value="$(arg fcu_url)" />
+	</include>
+
+</launch>
